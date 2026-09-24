@@ -1,11 +1,12 @@
 import products from "./data/products.js"
+import ProductList from "./components/ProductList/ProductList.jsx"
 
 function App() {
-
-  console.log(products);
-
   return (
-    <h1>Grocery compare</h1>
+    <>
+      <h1>Grocery compare</h1>
+      <ProductList products={products} />
+    </>
   )
 }
 
