@@ -38,13 +38,48 @@ function App() {
       ]);
 
     }
+  }, [shoppingList]);
+
+  const handleIncreaseQuantity = useCallback((product) => {
+    setShoppingList(
+      shoppingList.map((item) => {
+        if (item.id === product.id) {
+          return {
+            ...item,
+            quantity: item.quantity + 1,
+          };
+        }
+        return item;
+      })
+    )
+  }, [shoppingList])
+
+  const handleDecreaseQuantity = useCallback((product) => {
+    setShoppingList(
+      shoppingList.map((item) => {
+        if (item.id === product.id) {
+
+          if (item.quantity < 1) {
+            return {
+              ...item,
+              quantity: 0,
+            }
+          }
+          return {
+            ...item,
+            quantity: item.quantity - 1,
+          };
+        }
+        return item;
+      })
+    )
   }, [shoppingList])
 
   return (
     <>
       <h1>Grocery compare</h1>
       <ProductList products={products} handleAddProduct={handleAddProduct} />
-      <ShoppingList shoppingList={shoppingList} />
+      <ShoppingList shoppingList={shoppingList} handleIncreaseQuantity={handleIncreaseQuantity} handleDecreaseQuantity={handleDecreaseQuantity} />
     </>
   )
 }
