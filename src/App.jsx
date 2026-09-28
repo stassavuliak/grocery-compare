@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useCallback } from 'react';
-import products from "./data/products.js"
-import ProductList from "./components/ProductList/ProductList.jsx"
+import products from "./data/products.js";
+import ProductList from "./components/ProductList/ProductList.jsx";
+import ShoppingList from "./components/ShoppingList/ShoppingList.jsx";
 
 function App() {
   const [shoppingList, setShoppingList] = useState([]);
@@ -43,7 +44,7 @@ function App() {
     <>
       <h1>Grocery compare</h1>
       <ProductList products={products} handleAddProduct={handleAddProduct} />
-      {console.log(shoppingList)}
+      <ShoppingList shoppingList={shoppingList} />
     </>
   )
 }

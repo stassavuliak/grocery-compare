@@ -2,6 +2,8 @@ function ProductList({ products, handleAddProduct }) {
 
   return (
     <div className="product-list">
+      <br /><h2>Product list</h2><br />
+
       {
         products.map((product) => (
           <div key={product.id} className="product-list__item">
