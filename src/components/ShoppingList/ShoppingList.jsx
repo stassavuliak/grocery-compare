@@ -1,4 +1,4 @@
-function ShoppingList({ shoppingList, handleIncreaseQuantity, handleDecreaseQuantity }) {
+function ShoppingList({ shoppingList, handleIncreaseQuantity, handleDecreaseQuantity, handleRemoveProduct }) {
   return (
     <div className="shopping-list">
       <h2>Shopping list</h2>
@@ -10,6 +10,8 @@ function ShoppingList({ shoppingList, handleIncreaseQuantity, handleDecreaseQuan
             <button onClick={() => { handleDecreaseQuantity(shoppingListItem) }}>-</button>
             <span>quantity: {shoppingListItem.quantity}</span>
             <button onClick={() => { handleIncreaseQuantity(shoppingListItem) }}>+</button>
+
+            <button onClick={() => { handleRemoveProduct(shoppingListItem) }}>Remove</button>
           </div>
         ))
       }

@@ -52,17 +52,17 @@ function App() {
         return item;
       })
     )
-  }, [shoppingList])
+  }, [shoppingList]);
 
   const handleDecreaseQuantity = useCallback((product) => {
     setShoppingList(
       shoppingList.map((item) => {
         if (item.id === product.id) {
 
-          if (item.quantity < 1) {
+          if (item.quantity < 2) {
             return {
               ...item,
-              quantity: 0,
+              quantity: 1,
             }
           }
           return {
@@ -73,13 +73,31 @@ function App() {
         return item;
       })
     )
+  }, [shoppingList]);
+
+  const handleRemoveProduct = useCallback((product) => {
+    setShoppingList(
+      shoppingList.filter((item) => item.id !== product.id)
+    )
   }, [shoppingList])
 
   return (
     <>
       <h1>Grocery compare</h1>
-      <ProductList products={products} handleAddProduct={handleAddProduct} />
-      <ShoppingList shoppingList={shoppingList} handleIncreaseQuantity={handleIncreaseQuantity} handleDecreaseQuantity={handleDecreaseQuantity} />
+
+      <div className="wrap">
+        <ProductList
+          products={products}
+          handleAddProduct={handleAddProduct}
+        />
+
+        <ShoppingList
+          shoppingList={shoppingList}
+          handleIncreaseQuantity={handleIncreaseQuantity}
+          handleDecreaseQuantity={handleDecreaseQuantity}
+          handleRemoveProduct={handleRemoveProduct}
+        />
+      </div>
     </>
   )
 }
