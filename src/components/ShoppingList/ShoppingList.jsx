@@ -12,6 +12,14 @@ function ShoppingList({ shoppingList, handleIncreaseQuantity, handleDecreaseQuan
             <button onClick={() => { handleIncreaseQuantity(shoppingListItem) }}>+</button>
 
             <button onClick={() => { handleRemoveProduct(shoppingListItem) }}>Remove</button>
+
+            <div className="prices">
+              {shoppingListItem.prices.map((price) => (
+                <div key={price.store} className="item">
+                  {price.store}: {price.price}
+                </div>
+              ))}
+            </div>
           </div>
         ))
       }
