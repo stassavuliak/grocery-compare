@@ -4,7 +4,7 @@ const products = [
     name: "Arla Minimælk 1L",
     category: "Dairy",
     prices: [
-      { store: "Netto", price: 13.95 },
+      { store: "Netto", price: 12.95 },
       { store: "Rema 1000", price: 14.95 },
       { store: "Lidl", price: 12.95 },
     ],
@@ -15,8 +15,8 @@ const products = [
     category: "Dairy",
     prices: [
       { store: "Netto", price: 24.95 },
-      { store: "Rema 1000", price: 25.95 },
-      { store: "Lidl", price: 22.95 },
+      { store: "Rema 1000", price: 23.95 },
+      { store: "Lidl", price: 25.95 },
     ],
   },
   {
@@ -34,9 +34,9 @@ const products = [
     name: "Barilla Spaghetti 500g",
     category: "Pasta",
     prices: [
-      { store: "Netto", price: 15.95 },
-      { store: "Rema 1000", price: 16.95 },
-      { store: "Lidl", price: 13.95 },
+      { store: "Netto", price: 16.95 },
+      { store: "Rema 1000", price: 17.95 },
+      { store: "Lidl", price: 15.95 },
     ],
   },
   {
@@ -44,9 +44,9 @@ const products = [
     name: "Coca-Cola Original 1.5L",
     category: "Drinks",
     prices: [
-      { store: "Netto", price: 19.95 },
-      { store: "Rema 1000", price: 21.95 },
-      { store: "Lidl", price: 18.95 },
+      { store: "Netto", price: 18.95 },
+      { store: "Rema 1000", price: 20.95 },
+      { store: "Lidl", price: 19.95 },
     ],
   },
   {
@@ -54,9 +54,9 @@ const products = [
     name: "Oatly Havredrik 1L",
     category: "Dairy Alternatives",
     prices: [
-      { store: "Netto", price: 19.95 },
-      { store: "Rema 1000", price: 21.95 },
-      { store: "Lidl", price: 18.95 },
+      { store: "Netto", price: 20.95 },
+      { store: "Rema 1000", price: 19.95 },
+      { store: "Lidl", price: 21.95 },
     ],
   },
 ];
