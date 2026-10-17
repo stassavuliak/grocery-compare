@@ -1,4 +1,9 @@
-function ShoppingList({ shoppingList, handleIncreaseQuantity, handleDecreaseQuantity, handleRemoveProduct }) {
+function ShoppingList({
+  shoppingList,
+  handleIncreaseQuantity,
+  handleDecreaseQuantity,
+  handleRemoveProduct
+}) {
   const storeTotals = shoppingList.reduce((acc, shoppingListItem) => {
     shoppingListItem.prices.forEach((price) => {
       acc[price.store] =
@@ -19,6 +24,10 @@ function ShoppingList({ shoppingList, handleIncreaseQuantity, handleDecreaseQuan
     }, Object.entries(storeTotals)[0])
     : null;
 
+  const savings = Object.keys(storeTotals).length > 0
+    ? Math.max(...Object.values(storeTotals)) - Math.min(...Object.values(storeTotals))
+    : 0;
+
 
   return (
     <div className="shopping-list">
@@ -33,10 +42,16 @@ function ShoppingList({ shoppingList, handleIncreaseQuantity, handleDecreaseQuan
       </div>
 
       <div className="cheapest-store">
-        Cheapest store is: {cheapestStore?.[0]}
-        {cheapestStore ? cheapestStore?.[1].toFixed(2) : ''}
+        <strong> Cheapest store is: {cheapestStore?.[0]}</strong> <strong>{cheapestStore ? cheapestStore?.[1].toFixed(2) : ''}</strong>
       </div>
       {/* store totals */}
+
+
+      <div className="savings">
+        You save: {savings.toFixed(2)} kr
+      </div>
+
+
 
       {
         shoppingList.map((shoppingListItem) => {
