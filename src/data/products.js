@@ -6,7 +6,7 @@ const products = [
     prices: [
       { store: "Netto", price: 12.95 },
       { store: "Rema 1000", price: 14.95 },
-      { store: "Lidl", price: 12.95 },
+      { store: "Lidl", price: 13.95 },
     ],
   },
   {

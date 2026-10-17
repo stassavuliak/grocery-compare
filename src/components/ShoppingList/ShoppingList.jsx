@@ -1,3 +1,5 @@
+import StoreComparison from "../StoreComparison/StoreComparison";
+
 function ShoppingList({
   shoppingList,
   handleIncreaseQuantity,
@@ -33,24 +35,7 @@ function ShoppingList({
     <div className="shopping-list">
       <h2>Shopping list</h2>
 
-      <div className="store-totals">
-        {Object.entries(storeTotals).map(([store, total]) => (
-          <div key={store}>
-            {store}: {total.toFixed(2)} kr
-          </div>
-        ))}
-      </div>
-
-      <div className="cheapest-store">
-        <strong> Cheapest store is: {cheapestStore?.[0]}</strong> <strong>{cheapestStore ? cheapestStore?.[1].toFixed(2) : ''}</strong>
-      </div>
-      {/* store totals */}
-
-
-      <div className="savings">
-        You save: {savings.toFixed(2)} kr
-      </div>
-
+      <StoreComparison storeTotals={storeTotals} cheapestStore={cheapestStore} savings={savings} />
 
 
       {
